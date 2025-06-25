@@ -1,6 +1,6 @@
 import express from "express"
 // import fs from "express"
-import {readFileAsync, writeFileAsync} from "./test-files/test.js"
+import {readFileAsync, writeFileAsync,copyFileAsync,appendFileAsync,listDirectoryAsync,createDirectoryAsync, deleteFileAsync, deleteDirectoryAsync} from "./test-files/test.js"
 
 const app = express()
 
@@ -24,10 +24,16 @@ const startExpressServer = () => {
         console.log(`Express Server running at http://localhost:${PORT}`);
         console.log('Access API routes at http://localhost:3000');
         console.log('Press Ctrl+C to stop the server.');
-        readFileAsync("./test-files/sample.text")
+        // readFileAsync("./test-files/sample.text")
         // writeFileAsync("output.txt", "verify")
+        // copyFileAsync("./test-files/sample.text", "./output.txt")
+        // appendFileAsync ("./test-files/sample.text", "checking")
         
-        
+        // listDirectoryAsync(".")
+        // createDirectoryAsync("temp/test.txt")
+        deleteFileAsync("./temp/test.txt")
+        // deleteDirectoryAsync("temp")
+
     });
 };
 
