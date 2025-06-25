@@ -113,6 +113,16 @@ export async function createDirectoryAsync(dirPath) {
   }
 }
 
+export async function createFileAsync(filename, content) {
+  try {
+    await fs.writeFile(filename, content);
+    console.log(`File created: ${filename}`);
+  } catch (err) {
+    console.error(`Error creating file: ${err.message}`);
+  }
+}
+
+
 export async function deleteFileAsync(filename) {
   try {
     await fs.unlink(filename);

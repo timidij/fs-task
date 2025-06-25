@@ -1,6 +1,6 @@
 import express from "express"
 // import fs from "express"
-import {readFileAsync, writeFileAsync,copyFileAsync,appendFileAsync,listDirectoryAsync,createDirectoryAsync, deleteFileAsync, deleteDirectoryAsync} from "./test-files/test.js"
+import {readFileAsync, writeFileAsync,copyFileAsync,appendFileAsync,listDirectoryAsync, createFileAsync, createDirectoryAsync, deleteFileAsync, deleteDirectoryAsync} from "./test-files/test.js"
 
 const app = express()
 
@@ -30,8 +30,11 @@ const startExpressServer = () => {
         // appendFileAsync ("./test-files/sample.text", "checking")
         
         // listDirectoryAsync(".")
-        // createDirectoryAsync("temp/test.txt")
-        deleteFileAsync("./temp/test.txt")
+
+        // createDirectoryAsync("temp")
+        createFileAsync("./temp/test.txt", "temporary file")
+        // deleteFileAsync("./temp/test.txt")
+
         // deleteDirectoryAsync("temp")
 
     });
